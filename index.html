@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dianis: moda, belleza y hogar con pedidos por WhatsApp y atención personalizada.">
-    <meta name="keywords" content="moda, belleza, hogar, tienda online, WhatsApp, Dianis">
+    <meta name="description" content="Dianis: moda, belleza y hogar con pedidos por WhatsApp.">
     <title>Tiendas Dianis · Moda, Belleza y Hogar</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -30,7 +29,7 @@
             --shadow: 0 2px 10px rgba(255,255,255,0.05);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: var(--bg); color: var(--text); padding-top: 160px; transition: background 0.3s, color 0.3s; }
+        body { background-color: var(--bg); color: var(--text); padding-top: 210px; transition: background 0.3s, color 0.3s; }
         .navbar { position: fixed; top: 0; left: 0; width: 100%; background: var(--card-bg); box-shadow: var(--shadow); z-index: 1000; }
         .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; border-bottom: 1px solid var(--gray); gap: 10px; flex-wrap: wrap; }
         .logo { font-size: 28px; font-weight: 700; color: var(--primary); letter-spacing: -1px; white-space: nowrap; }
@@ -47,7 +46,10 @@
         .cat-nav { display: flex; justify-content: center; gap: 15px; padding: 12px 0; background: var(--dark); color: white; overflow-x: auto; white-space: nowrap; }
         .cat-nav button { background: none; border: none; color: white; font-size: 15px; cursor: pointer; font-weight: 400; transition: color 0.2s; padding: 5px 12px; }
         .cat-nav button:hover, .cat-nav button.active { color: var(--primary); font-weight: 600; border-bottom: 2px solid var(--primary); }
-        .hero-banner { width: 90%; max-width: 1200px; margin: 20px auto; background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%); border-radius: 12px; padding: 30px 20px; text-align: center; color: var(--dark); position: relative; overflow: hidden; }
+        .sub-nav { display: flex; justify-content: center; gap: 10px; padding: 8px 0; background: var(--card-bg); border-bottom: 1px solid var(--gray); flex-wrap: wrap; }
+        .sub-nav button { background: none; border: 1px solid var(--gray); color: var(--text); font-size: 14px; cursor: pointer; padding: 4px 14px; border-radius: 20px; transition: 0.2s; }
+        .sub-nav button.active, .sub-nav button:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+        .hero-banner { width: 90%; max-width: 1200px; margin: 20px auto; background: linear-gradient(90deg, #ff9a9e 0%, #fecfef 100%); border-radius: 12px; padding: 30px 20px; text-align: center; color: var(--dark); }
         .trust-strip { width: 90%; max-width: 1200px; margin: 0 auto 10px; background: var(--card-bg); border: 1px solid var(--gray); border-radius: 12px; padding: 12px 16px; display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; box-shadow: var(--shadow); }
         .trust-item { font-size: 14px; color: var(--text); }
         .container { width: 90%; max-width: 1200px; margin: 30px auto; }
@@ -56,31 +58,9 @@
         .sort-filter { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
         .sort-filter select, .sort-filter input { padding: 8px 15px; border-radius: 25px; border: 1px solid var(--gray); background: var(--card-bg); color: var(--text); }
         .sort-filter label { font-size: 13px; display: inline-flex; align-items: center; gap: 6px; }
-        .primary-btn {
-            background: linear-gradient(135deg, #ff5a6a 0%, #ff3f76 100%);
-            color: #fff;
-            border: none;
-            padding: 9px 16px;
-            border-radius: 999px;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-            cursor: pointer;
-            box-shadow: 0 8px 18px rgba(255, 74, 90, 0.28);
-            transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
-        }
-        .primary-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 12px 22px rgba(255, 74, 90, 0.36);
-            filter: brightness(1.02);
-        }
-        .primary-btn:active {
-            transform: translateY(0);
-            box-shadow: 0 7px 14px rgba(255, 74, 90, 0.28);
-        }
-        .primary-btn:focus-visible {
-            outline: 3px solid rgba(255, 74, 90, 0.25);
-            outline-offset: 2px;
-        }
+        .primary-btn { background: linear-gradient(135deg, #ff5a6a 0%, #ff3f76 100%); color: #fff; border: none; padding: 9px 16px; border-radius: 999px; font-weight: 700; cursor: pointer; box-shadow: 0 8px 18px rgba(255, 74, 90, 0.28); transition: transform 0.18s, box-shadow 0.18s, filter 0.18s; }
+        .primary-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 22px rgba(255, 74, 90, 0.36); filter: brightness(1.02); }
+        .primary-btn:active { transform: translateY(0); box-shadow: 0 7px 14px rgba(255, 74, 90, 0.28); }
         .ghost-btn { background: transparent; border: 1px solid var(--gray); color: var(--text); padding: 8px 12px; border-radius: 25px; cursor: pointer; }
         .result-hint { font-size: 13px; margin-top: 8px; opacity: 0.8; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
@@ -92,9 +72,11 @@
         .badge { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; color: white; }
         .badge-nuevo { background: #4caf50; }
         .badge-destacado { background: #c7a43b; }
+        .badge-pendiente { background: #2196F3; }
         .product-cat { font-size: 12px; color: var(--primary); text-transform: uppercase; margin-bottom: 5px; }
         .product-title { font-weight: 600; font-size: 14px; margin-bottom: 5px; height: 40px; overflow: hidden; }
         .product-price { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 5px; }
+        .product-price.pendiente { font-size: 16px; color: #2196F3; }
         .product-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
         .add-to-cart { background: var(--dark); color: white; border: none; padding: 8px 15px; border-radius: 25px; font-weight: 600; cursor: pointer; transition: background 0.3s; }
         .add-to-cart:hover { background: var(--primary); }
@@ -126,7 +108,7 @@
         .modal-close { position: absolute; top: 10px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; }
         .back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 999; }
         @media (max-width: 768px) {
-            body { padding-top: 200px; }
+            body { padding-top: 230px; }
             .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
             .whatsapp-fab { bottom: 90px; }
         }
@@ -150,6 +132,7 @@
             </div>
         </div>
         <div class="cat-nav" id="catNav"></div>
+        <div class="sub-nav" id="subNav" style="display:none;"></div>
     </nav>
 
     <!-- BANNER PRINCIPAL -->
@@ -227,15 +210,28 @@
     <script>
         // ------------------ CONFIGURACIÓN EDITABLE ------------------
         const WHATSAPP_NUM = '5354644175';
-        const HERO_SLIDES = [
-            { img: 'imagenes/banner1.jpg', text: 'Nueva Colección Primavera' },
-            { img: 'imagenes/banner2.jpg', text: 'Ofertas en Belleza' }
-        ];
         // ------------------------------------------------------------
 
         // Zona editable por el programa Java (¡no borrar los marcadores!)
         const categoriasBase = [
   // --- INICIO PRODUCTOS PERSONALIZADOS ---
+  { id: 'cabello', nombre: 'Cabello', subcategorias: [
+    { id: 'champu', nombre: 'Champu', productos: [
+      { id: 100, nombre: 'Cheraw (Prueva)', precio: 0.0, imagen: 'imagenes/prod_1778037099882.png', descripcion: 'Hola esto es una prueva', destacado: false, novedad: false, pendienteImportacion: true },
+    ]},
+  ]},
+  { id: 'piel', nombre: 'Piel', subcategorias: [
+  ]},
+  { id: 'maquillaje', nombre: 'Maquillaje', subcategorias: [
+  ]},
+  { id: 'zapatos', nombre: 'Zapatos', subcategorias: [
+    { id: 'chancletas', nombre: 'chancletas', productos: [
+      { id: 101, nombre: 'Çhancletas', precio: 123.0, imagen: 'imagenes/prod_1778037150267.png', descripcion: 'asfewgwrvdcds', destacado: false, novedad: true, pendienteImportacion: false },
+    ]},
+    { id: 'botas', nombre: 'botas', productos: [
+      { id: 102, nombre: 'afewf', precio: 324.0, imagen: 'imagenes/prod_1778037191148.png', descripcion: 'qwfwef', destacado: true, novedad: false, pendienteImportacion: false },
+    ]},
+  ]},
   // --- FIN PRODUCTOS PERSONALIZADOS ---
         ];
 
@@ -243,8 +239,8 @@
         let carrito = JSON.parse(localStorage.getItem('carritoDianis')) || [];
         let wishlist = JSON.parse(localStorage.getItem('wishlistDianis')) || [];
         let darkMode = localStorage.getItem('darkMode') === 'true';
-        let categoriaActiva = 'todas';
-        let ultimaListaFiltrada = [];
+        let categoriaActiva = 'todas';      // 'todas' o id de categoría
+        let subcategoriaActiva = null;      // id de subcategoría o null (todas sub)
 
         function aplicarModoOscuro() {
             document.body.classList.toggle('dark-mode', darkMode);
@@ -257,7 +253,17 @@
         function obtenerProductosPlanos() {
             let planos = [];
             categoriasBase.forEach(cat => {
-                cat.productos.forEach(p => planos.push({...p, categoria: cat.nombre, catId: cat.id}));
+                cat.subcategorias.forEach(sub => {
+                    sub.productos.forEach(p => {
+                        planos.push({
+                            ...p,
+                            categoria: cat.nombre,
+                            catId: cat.id,
+                            subcategoria: sub.nombre,
+                            subcatId: sub.id
+                        });
+                    });
+                });
             });
             return planos;
         }
@@ -271,6 +277,54 @@
             });
         }
 
+        function mostrarSubcategorias() {
+            const subNav = document.getElementById('subNav');
+            subNav.innerHTML = '';
+            if (categoriaActiva === 'todas') {
+                subNav.style.display = 'none';
+                return;
+            }
+            const cat = categoriasBase.find(c => c.id === categoriaActiva);
+            if (!cat) {
+                subNav.style.display = 'none';
+                return;
+            }
+            subNav.style.display = 'flex';
+            subNav.innerHTML = `<button class="${subcategoriaActiva === null ? 'active' : ''}" onclick="filtrarSubcategoria(null)">Todas</button>`;
+            cat.subcategorias.forEach(sub => {
+                subNav.innerHTML += `<button class="${subcategoriaActiva === sub.id ? 'active' : ''}" onclick="filtrarSubcategoria('${sub.id}')">${sub.nombre}</button>`;
+            });
+        }
+
+        function filtrarCategoria(catId) {
+            categoriaActiva = catId;
+            subcategoriaActiva = null;
+            renderizarMenuCategorias();
+            mostrarSubcategorias();
+            actualizarTitulo();
+            aplicarFiltros();
+        }
+
+        function filtrarSubcategoria(subId) {
+            subcategoriaActiva = subId;
+            mostrarSubcategorias();
+            actualizarTitulo();
+            aplicarFiltros();
+        }
+
+        function actualizarTitulo() {
+            let titulo = 'Recomendados para ti';
+            if (categoriaActiva !== 'todas') {
+                const cat = categoriasBase.find(c => c.id === categoriaActiva);
+                titulo = cat ? cat.nombre : 'Productos';
+                if (subcategoriaActiva) {
+                    const sub = cat.subcategorias.find(s => s.id === subcategoriaActiva);
+                    titulo = sub ? sub.nombre : cat.nombre;
+                }
+            }
+            document.getElementById('titulo-seccion').textContent = titulo;
+        }
+
         function productoCard(p) {
             const imgSrc = p.imagen || '';
             const imgTag = imgSrc
@@ -279,7 +333,17 @@
             const badges = [];
             if (p.novedad) badges.push('<span class="badge badge-nuevo">Nuevo</span>');
             if (p.destacado) badges.push('<span class="badge badge-destacado">Destacado</span>');
+            if (p.pendienteImportacion) badges.push('<span class="badge badge-pendiente">Pendiente</span>');
             const wishClass = wishlist.some(w => w.id === p.id) ? 'active' : '';
+            let priceHtml, actionBtn;
+            if (p.pendienteImportacion) {
+                priceHtml = '<div class="product-price pendiente">Pendiente de importación</div>';
+                actionBtn = `<button class="primary-btn" style="background:#2196F3;font-size:14px;" onclick="encargarPendiente(${p.id})">📲 Encargar</button>`;
+            } else {
+                priceHtml = `<div class="product-price">$${p.precio.toFixed(2)}</div>`;
+                actionBtn = `<button class="add-to-cart" onclick="agregarAlCarrito(${p.id})">Añadir</button>`;
+            }
+            const catLine = p.subcategoria ? `${p.categoria} / ${p.subcategoria}` : p.categoria;
             return `
             <div class="product-card">
                 <div class="product-img" onclick="verProducto(${p.id})">
@@ -287,44 +351,49 @@
                     ${badges.length ? '<div class="product-badges">'+badges.join('')+'</div>' : ''}
                     <button class="quick-view-btn" onclick="event.stopPropagation(); abrirVistaRapida(${p.id})">🔍</button>
                 </div>
-                <div class="product-cat">${p.categoria}</div>
+                <div class="product-cat">${catLine}</div>
                 <div class="product-title">${p.nombre}</div>
-                <div class="product-price">$${p.precio.toFixed(2)}</div>
+                ${priceHtml}
                 <div class="product-actions">
-                    <button class="add-to-cart" onclick="agregarAlCarrito(${p.id})">Añadir</button>
+                    ${actionBtn}
                     <button class="wishlist-btn ${wishClass}" onclick="toggleWishlist(${p.id})">❤️</button>
                 </div>
             </div>`;
         }
 
-        function renderizarProductos(lista) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = lista.length
-                ? lista.map(productoCard).join('')
-                : '<p>Sin productos con estos filtros. Prueba ampliar el rango de precio o quitar filtros.</p>';
+        function encargarPendiente(id) {
+            const p = obtenerProductosPlanos().find(x => x.id === id);
+            if (!p) return;
+            const msg = `Hola Dianis, quisiera encargar el producto "${p.nombre}" que está pendiente de importación. ¿Me podrías dar más información?`;
+            window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`, '_blank');
         }
 
-        function filtrarCategoria(catId) {
-            categoriaActiva = catId;
-            renderizarMenuCategorias();
-            const todos = obtenerProductosPlanos();
-            let filtrados = catId === 'todas' ? todos : todos.filter(p => p.catId === catId);
-            document.getElementById('titulo-seccion').textContent = catId === 'todas' ? 'Recomendados para ti' : (categoriasBase.find(c=>c.id===catId)?.nombre || 'Productos');
-            aplicarFiltros(filtrados);
+        function renderizarProductos(lista) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = lista.length ? lista.map(productoCard).join('') : '<p>Sin productos con estos filtros.</p>';
         }
 
         function aplicarFiltros(listaExterna) {
             let lista = listaExterna || obtenerProductosPlanos();
+            // Filtro por categoría/subcategoría activa
+            if (categoriaActiva !== 'todas') {
+                lista = lista.filter(p => p.catId === categoriaActiva);
+                if (subcategoriaActiva) {
+                    lista = lista.filter(p => p.subcatId === subcategoriaActiva);
+                }
+            }
             const min = parseFloat(document.getElementById('minPrice').value) || 0;
             const max = parseFloat(document.getElementById('maxPrice').value) || Infinity;
             const soloDestacados = document.getElementById('onlyFeatured').checked;
-            lista = lista.filter(p => p.precio >= min && p.precio <= max);
+            lista = lista.filter(p => {
+                if (p.pendienteImportacion) return true; // no filtrar por precio los pendientes
+                return p.precio >= min && p.precio <= max;
+            });
             if (soloDestacados) lista = lista.filter(p => p.destacado);
             const sort = document.getElementById('sortBy').value;
-            if (sort === 'priceAsc') lista.sort((a,b) => a.precio - b.precio);
-            else if (sort === 'priceDesc') lista.sort((a,b) => b.precio - a.precio);
+            if (sort === 'priceAsc') lista.sort((a,b) => (a.pendienteImportacion ? 999999 : a.precio) - (b.pendienteImportacion ? 999999 : b.precio));
+            else if (sort === 'priceDesc') lista.sort((a,b) => (b.pendienteImportacion ? 999999 : b.precio) - (a.pendienteImportacion ? 999999 : a.precio));
             else if (sort === 'nameAsc') lista.sort((a,b) => a.nombre.localeCompare(b.nombre));
-            ultimaListaFiltrada = lista;
             renderizarProductos(lista);
             document.getElementById('resultHint').textContent = `${lista.length} producto(s) encontrados`;
         }
@@ -335,55 +404,53 @@
             document.getElementById('maxPrice').value = '';
             document.getElementById('onlyFeatured').checked = false;
             searchInput.value = '';
-            filtrarCategoria(categoriaActiva);
+            filtrarCategoria('todas');
         }
 
         // ---------- BUSCADOR CON AUTOCOMPLETAR ----------
         const searchInput = document.getElementById('searchInput');
         const suggestionsDiv = document.getElementById('suggestions');
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') realizarBusqueda();
-        });
+        searchInput.addEventListener('keydown', e => { if (e.key === 'Enter') realizarBusqueda(); });
         searchInput.addEventListener('input', () => {
             const texto = searchInput.value.trim().toLowerCase();
-            if (!texto) { suggestionsDiv.style.display='none'; return; }
+            if (!texto) { suggestionsDiv.style.display = 'none'; return; }
             const resultados = obtenerProductosPlanos().filter(p =>
                 p.nombre.toLowerCase().includes(texto) ||
                 (p.categoria || '').toLowerCase().includes(texto) ||
                 (p.descripcion || '').toLowerCase().includes(texto)
-            ).slice(0,5);
+            ).slice(0, 5);
             suggestionsDiv.innerHTML = resultados.map(p => `<div onclick="seleccionarSugerencia('${p.nombre}')">${p.nombre}</div>`).join('');
             suggestionsDiv.style.display = resultados.length ? 'block' : 'none';
         });
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-bar')) suggestionsDiv.style.display = 'none';
-        });
-        function seleccionarSugerencia(texto) {
-            searchInput.value = texto;
-            suggestionsDiv.style.display = 'none';
-            realizarBusqueda();
-        }
+        document.addEventListener('click', e => { if (!e.target.closest('.search-bar')) suggestionsDiv.style.display = 'none'; });
+        function seleccionarSugerencia(texto) { searchInput.value = texto; suggestionsDiv.style.display = 'none'; realizarBusqueda(); }
         function realizarBusqueda() {
             const texto = searchInput.value.trim().toLowerCase();
             if (!texto) return filtrarCategoria('todas');
             categoriaActiva = 'todas';
+            subcategoriaActiva = null;
             renderizarMenuCategorias();
+            mostrarSubcategorias();
+            document.getElementById('titulo-seccion').textContent = `Resultados para "${texto}"`;
             const resultados = obtenerProductosPlanos().filter(p =>
                 p.nombre.toLowerCase().includes(texto) ||
                 (p.categoria || '').toLowerCase().includes(texto) ||
                 (p.descripcion || '').toLowerCase().includes(texto)
             );
-            document.getElementById('titulo-seccion').textContent = `Resultados para "${texto}"`;
             aplicarFiltros(resultados);
         }
 
         // ---------- CARRITO ----------
         function agregarAlCarrito(id) {
-            const producto = obtenerProductosPlanos().find(p => p.id === id);
-            if (!producto) return;
+            const p = obtenerProductosPlanos().find(x => x.id === id);
+            if (!p) return;
+            if (p.pendienteImportacion) {
+                alert('Este producto está pendiente de importación. Usa el botón "Encargar" para contactarnos por WhatsApp.');
+                return;
+            }
             const existente = carrito.find(i => i.id === id);
             if (existente) existente.cantidad++;
-            else carrito.push({ id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen, cantidad: 1 });
+            else carrito.push({ id, nombre: p.nombre, precio: p.precio, imagen: p.imagen, cantidad: 1 });
             actualizarCarritoUI();
             document.getElementById('cartPanel').classList.add('open');
         }
@@ -401,17 +468,19 @@
             cont.innerHTML = carrito.map(item => {
                 total += item.precio * item.cantidad;
                 cant += item.cantidad;
-                return `<div class="cart-item">
+                return `
+                <div class="cart-item">
                     <img src="${item.imagen || ''}" class="cart-item-img" onerror="this.outerHTML='<div class=&quot;cart-item-img&quot; style=&quot;display:flex;align-items:center;justify-content:center;&quot;>📦</div>'" alt="">
                     <div class="cart-item-info">
                         <div class="cart-item-title">${item.nombre}</div>
-                        <div class="cart-item-price">$${(item.precio*item.cantidad).toFixed(2)}</div>
+                        <div class="cart-item-price">$${(item.precio * item.cantidad).toFixed(2)}</div>
                         <div class="cart-qty">
                             <button onclick="modificarCantidad(${item.id}, -1)">-</button>
                             <span>${item.cantidad}</span>
                             <button onclick="modificarCantidad(${item.id}, 1)">+</button>
                         </div>
-                    </div></div>`;
+                    </div>
+                </div>`;
             }).join('') || '<p>Tu bolsa está vacía</p>';
             document.getElementById('cartTotal').textContent = total.toFixed(2);
             document.getElementById('cartCount').textContent = cant;
@@ -420,24 +489,21 @@
         function enviarWhatsApp(extraInfo = {}) {
             if (!carrito.length) return alert('Bolsa vacía');
             let mensaje = 'Hola Dianis, quiero este pedido:\n';
-            carrito.forEach(i => mensaje += `- ${i.nombre} x${i.cantidad}: $${(i.precio*i.cantidad).toFixed(2)}\n`);
-            const total = carrito.reduce((s,i) => s + i.precio*i.cantidad, 0);
+            carrito.forEach(i => mensaje += `- ${i.nombre} x${i.cantidad}: $${(i.precio * i.cantidad).toFixed(2)}\n`);
+            const total = carrito.reduce((s, i) => s + i.precio * i.cantidad, 0);
             mensaje += `\nTotal: $${total.toFixed(2)}\n`;
             if (extraInfo.nombre) mensaje += `Cliente: ${extraInfo.nombre}\n`;
-            if (extraInfo.telefono) mensaje += `Telefono: ${extraInfo.telefono}\n`;
+            if (extraInfo.telefono) mensaje += `Teléfono: ${extraInfo.telefono}\n`;
             if (extraInfo.nota) mensaje += `Nota: ${extraInfo.nota}\n`;
             window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(mensaje)}`, '_blank');
         }
-
         function abrirCheckout() {
             if (!carrito.length) return alert('Bolsa vacía');
             document.getElementById('checkoutModal').classList.add('active');
         }
-
         function cerrarCheckout() {
             document.getElementById('checkoutModal').classList.remove('active');
         }
-
         function confirmarPedidoWhatsApp() {
             const nombre = document.getElementById('clienteNombre').value.trim();
             const telefono = document.getElementById('clienteTelefono').value.trim();
@@ -449,17 +515,16 @@
             enviarWhatsApp({ nombre, telefono, nota });
             cerrarCheckout();
         }
-
         function contactoRapidoWhatsApp() {
-            window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('Hola Dianis, quiero informacion sobre sus productos.')}`, '_blank');
+            window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent('Hola Dianis, quiero información sobre sus productos.')}`, '_blank');
         }
 
         // ---------- FAVORITOS ----------
         function toggleWishlist(id) {
             const idx = wishlist.findIndex(w => w.id === id);
-            if (idx >= 0) wishlist.splice(idx,1);
+            if (idx >= 0) wishlist.splice(idx, 1);
             else {
-                const p = obtenerProductosPlanos().find(p => p.id === id);
+                const p = obtenerProductosPlanos().find(x => x.id === id);
                 if (p) wishlist.push({ id, nombre: p.nombre, imagen: p.imagen, precio: p.precio });
             }
             guardarWishlist();
@@ -472,15 +537,22 @@
 
         // ---------- VISTA RÁPIDA ----------
         function abrirVistaRapida(id) {
-            const p = obtenerProductosPlanos().find(p => p.id === id);
+            const p = obtenerProductosPlanos().find(x => x.id === id);
             if (!p) return;
+            const esPendiente = p.pendienteImportacion;
+            const precioHtml = esPendiente
+                ? '<div class="product-price pendiente" style="font-size:22px;">Pendiente de importación</div>'
+                : `<div class="product-price">$${p.precio.toFixed(2)}</div>`;
+            const botonAccion = esPendiente
+                ? `<button class="primary-btn" style="background:#2196F3;margin-top:10px;" onclick="encargarPendiente(${p.id})">📲 Encargar por WhatsApp</button>`
+                : `<button class="add-to-cart" onclick="agregarAlCarrito(${p.id});cerrarVistaRapida()">Añadir</button>`;
             document.getElementById('quickModalContent').innerHTML = `
                 <button class="modal-close" onclick="cerrarVistaRapida()">✕</button>
                 <div style="text-align:center"><img src="${p.imagen || ''}" style="width:100%;max-height:250px;object-fit:cover;border-radius:10px;" onerror="this.style.display='none'"></div>
                 <h2>${p.nombre}</h2>
                 <p>${p.descripcion || 'Excelente producto.'}</p>
-                <div class="product-price">$${p.precio.toFixed(2)}</div>
-                <button class="add-to-cart" onclick="agregarAlCarrito(${p.id});cerrarVistaRapida()">Añadir</button>
+                ${precioHtml}
+                ${botonAccion}
                 <button class="checkout-btn" style="margin-top:10px;" onclick="window.open('https://wa.me/${WHATSAPP_NUM}?text=Hola, me interesa ${encodeURIComponent(p.nombre)}')">📲 Preguntar por WhatsApp</button>
             `;
             document.getElementById('quickModal').classList.add('active');
@@ -494,21 +566,30 @@
             const hash = window.location.hash;
             if (hash.startsWith('#/producto/')) {
                 const id = parseInt(hash.split('/')[2]);
-                const p = obtenerProductosPlanos().find(p => p.id === id);
+                const p = obtenerProductosPlanos().find(x => x.id === id);
                 if (p) {
                     document.getElementById('titulo-seccion').textContent = p.nombre;
                     categoriaActiva = 'todas';
+                    subcategoriaActiva = null;
                     renderizarMenuCategorias();
+                    mostrarSubcategorias();
                     document.getElementById('minPrice').value = '';
                     document.getElementById('maxPrice').value = '';
                     document.getElementById('sortBy').value = 'default';
+                    const esPendiente = p.pendienteImportacion;
+                    const precioHtml = esPendiente
+                        ? '<div class="product-price pendiente" style="font-size:28px;">Pendiente de importación</div>'
+                        : `<div class="product-price" style="font-size:28px;">$${p.precio.toFixed(2)}</div>`;
+                    const botonAccion = esPendiente
+                        ? `<button class="primary-btn" style="background:#2196F3;" onclick="encargarPendiente(${p.id})">📲 Encargar por WhatsApp</button>`
+                        : `<button class="add-to-cart" onclick="agregarAlCarrito(${p.id})">🛒 Añadir al carrito</button>`;
                     document.getElementById('productGrid').innerHTML = `
                         <div style="background:var(--card-bg); padding: 30px; border-radius:12px; box-shadow:var(--shadow);">
                             <img src="${p.imagen || ''}" style="width:100%;max-height:400px;object-fit:cover;border-radius:10px;" onerror="this.style.display='none'">
                             <h2>${p.nombre}</h2>
-                            <div class="product-price" style="font-size:28px;">$${p.precio.toFixed(2)}</div>
+                            ${precioHtml}
                             <p>${p.descripcion || 'Sin descripción.'}</p>
-                            <button class="add-to-cart" onclick="agregarAlCarrito(${p.id})">🛒 Añadir al carrito</button>
+                            ${botonAccion}
                             <button class="checkout-btn" style="margin-top:10px;" onclick="window.open('https://wa.me/${WHATSAPP_NUM}?text=Hola, me interesa ${encodeURIComponent(p.nombre)}')">📲 Pedir por WhatsApp</button>
                         </div>`;
                 }
@@ -529,7 +610,7 @@
         window.onload = () => {
             aplicarModoOscuro();
             renderizarMenuCategorias();
-            manejarHash(); // carga según URL
+            manejarHash();
             actualizarCarritoUI();
             renderizarFavoritosBadge();
         };
